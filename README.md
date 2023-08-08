@@ -63,3 +63,59 @@ $ npm run start:dev
 - In system Users can: 
   + Login, Register by your Email.
   + Add TodoList, Find your todoList, Update and Delete Todolist.
+
+# Do it
+  <p><h3>[Back-End]: Phan Đình Phong - PhongPD</h3></p>
+
++ Create API SignUp, SignIn User
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/Login.png" width="120%" alt="Use Case Picture" /></a>
+  Login
+</p>
+
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/createUser.png" width="120%" alt="Use Case Picture" /></a>
+  Register
+</p>
+
++ Create API CRUD TodoList
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/createList.png" width="120%" alt="Use Case Picture" /></a>
+  Create TodoList
+</p>
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/updateList.png" width="120%" alt="Use Case Picture" /></a>
+  Update TodoList
+</p>
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/deleteList.png" width="120%" alt="Use Case Picture" /></a>
+  Remove Todolist
+</p>
+
+
+    
++ Create API Filer Tittle, UserID, IdTodolist
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/filterByIdList.png" width="120%" alt="Use Case Picture" /></a>
+  Filter by id TodoList
+</p>
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/filterUserById.png" width="120%" alt="Use Case Picture" /></a>
+  Filter by id Users
+</p>
+
+
+<p align= "center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/filterUserByTiitle.png" width="120%" alt="Use Case Picture" /></a>
+  Filter by id Tittle
+</p>
+
+
+
