@@ -26,6 +26,7 @@ import { ConfigModule } from '@nestjs/config';
       database: process.env.DB_DATABASE,
       entities: [User, TodoList],
       synchronize: true,
+
     }),
     TypeOrmModule.forFeature([User, TodoList]),
     PassportModule.register({

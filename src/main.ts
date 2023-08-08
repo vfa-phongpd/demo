@@ -4,10 +4,14 @@ import * as cookieParser from 'cookie-parser'
 import { ValidationPipe } from '@nestjs/common';
 import * as dotenv from 'dotenv';
 import { ConfigService } from '@nestjs/config';
+import { LoggingInterceptor } from './vendors/interceptor/login.interceptor';
+import { HttpExceptionFilter } from './vendors/filters/http-exception.filter';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   dotenv.config();
-  const configService = app.get(ConfigService);
+  app.get(ConfigService);
+  app.useGlobalInterceptors(new LoggingInterceptor());
+  app.useGlobalFilters(new HttpExceptionFilter());
   app.use(cookieParser());
   app.enableCors({
     credentials: true

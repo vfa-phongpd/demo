@@ -4,9 +4,9 @@ import { TodoList } from './entities/todo-list.entity';
 import { CreateTodoListInput } from './dto/create-todo-list.input';
 import { UpdateTodoListInput } from './dto/update-todo-list.input';
 import { UseGuards } from '@nestjs/common';
-import { GqlUser } from 'src/users/user.decorator';
+import { GqlUser } from 'src/vendors/decorator/user.decorator';
 import { log } from 'console';
-import { JwtAuthGuard } from 'src/users/user.guard';
+import { JwtAuthGuard } from 'src/guard/user.guard';
 
 @Resolver(() => TodoList)
 export class TodoListResolver {

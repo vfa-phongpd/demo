@@ -8,8 +8,8 @@ import * as bcrypt from 'bcrypt';
 import { LoginDTO } from './dto/login-user.input';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
-import { JwtAuthGuard } from './user.guard';
-import { GqlUser } from './user.decorator';
+import { JwtAuthGuard } from '../guard/user.guard';
+import { GqlUser } from '../vendors/decorator/user.decorator';
 @Resolver(() => User)
 export class UsersResolver {
   constructor(private readonly usersService: UsersService,
