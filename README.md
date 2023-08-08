@@ -41,33 +41,25 @@ $ npm run start
 # watch mode
 $ npm run start:dev
 
-# production mode
-$ npm run start:prod
-```
+``````
 
-## Test
+# ERD
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/erd.img.png" width="100%" alt="Erd Picture" /></a>
+</p>
 
-```bash
-# unit tests
-$ npm run test
 
-# e2e tests
-$ npm run test:e2e
+- In project has 2 Table Users and TodoList:
 
-# test coverage
-$ npm run test:cov
-```
+  + User table has data fields: Id, Name, Email, Password, Status, Create_at, Update_at. Id is the Primary Key.
 
-## Support
+  + TodoList table has data fields: Id, Priority, Is_Complete, Title, Content, User_id is foreign key of table Users.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+# Use Case
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="./img/UseCase.img.png" width="100%" alt="Use Case Picture" /></a>
+</p>
 
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- In system Users can: 
+  + Login, Register by your Email.
+  + Add TodoList, Find your todoList, Update and Delete Todolist.

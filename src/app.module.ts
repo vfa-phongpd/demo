@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { TodoListModule } from './todo-list/todo-list.module';
+import { addTransactionalDataSource } from 'typeorm-transactional';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './users/entities/user.entity';
 import { TodoList } from './todo-list/entities/todo-list.entity';
@@ -12,21 +13,23 @@ import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 import { join } from 'path'
 import { ConfigModule } from '@nestjs/config';
+import dbConfig from './db/mysql';
+import { DataSource } from 'typeorm';
 
 @Module({
 
   imports: [
     ConfigModule.forRoot({ isGlobal: true, }),
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: process.env.DB_HOST,
-      port: 3306,
-      username: process.env.DB_USERNAME,
-      password: '',
-      database: process.env.DB_DATABASE,
-      entities: [User, TodoList],
-      synchronize: true,
-
+    TypeOrmModule.forRootAsync({
+      useFactory() {
+        return dbConfig;
+      },
+      async dataSourceFactory(options) {
+        if (!options) {
+          throw new Error('Invalid dataSource options passed');
+        }
+        return addTransactionalDataSource(new DataSource(options));
+      },
     }),
     TypeOrmModule.forFeature([User, TodoList]),
     PassportModule.register({
