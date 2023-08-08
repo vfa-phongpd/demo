@@ -18,10 +18,10 @@ export class TodoListService {
   async create(createTodoListInput: CreateTodoListInput, id: any) {
     try {
 
-      const users = await this.userService.findOne(id);
+      const users = await this.userService.findOne({ id });
 
 
-      // if user exists
+      //if user exists
       if (!users) {
         throw new Error('User not exits');
       }
